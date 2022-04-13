@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.springblade.modules.merchant.mapper.BankMerchantMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="bankMerchantResultMap" type="org.springblade.modules.merchant.entity.BankMerchant">
+        <id column="id" property="id"/>
+        <result column="create_time" property="createTime"/>
+        <result column="create_user" property="createUser"/>
+        <result column="create_dept" property="createDept"/>
+        <result column="update_time" property="updateTime"/>
+        <result column="update_user" property="updateUser"/>
+        <result column="status" property="status"/>
+        <result column="is_deleted" property="isDeleted"/>
+        <result column="fee_type" property="feeType"/>
+        <result column="account" property="account"/>
+        <result column="account_name" property="accountName"/>
+        <result column="bank_merchant_app_id" property="bankMerchantAppId"/>
+        <result column="bank_api_url" property="bankApiUrl"/>
+        <result column="bank_biz_version" property="bankBizVersion"/>
+        <result column="bank_name" property="bankName"/>
+        <result column="bank_code" property="bankCode"/>
+        <result column="extend_info" property="extendInfo"/>
+    </resultMap>
+
+
+    <select id="selectBankMerchantPage" resultMap="bankMerchantResultMap">
+        select * from blade_bank_merchant where is_deleted = 0
+    </select>
+
+</mapper>

@@ -1,0 +1,10 @@
+INSERT INTO `blade_menu`(`id`, `parent_id`, `code`, `name`, `alias`, `path`, `source`, `sort`, `category`, `action`, `is_open`, `remark`, `is_deleted`)
+VALUES ('1482973877666611207', 1123598815738675201, 'bankmerchant', '', 'menu', '/bank_merchant/bankmerchant', NULL, 1, 1, 0, 1, NULL, 0);
+INSERT INTO `blade_menu`(`id`, `parent_id`, `code`, `name`, `alias`, `path`, `source`, `sort`, `category`, `action`, `is_open`, `remark`, `is_deleted`)
+VALUES ('1482973877666611208', '1482973877666611207', 'bankmerchant_add', '新增', 'add', '/bank_merchant/bankmerchant/add', 'plus', 1, 2, 1, 1, NULL, 0);
+INSERT INTO `blade_menu`(`id`, `parent_id`, `code`, `name`, `alias`, `path`, `source`, `sort`, `category`, `action`, `is_open`, `remark`, `is_deleted`)
+VALUES ('1482973877666611209', '1482973877666611207', 'bankmerchant_edit', '修改', 'edit', '/bank_merchant/bankmerchant/edit', 'form', 2, 2, 2, 1, NULL, 0);
+INSERT INTO `blade_menu`(`id`, `parent_id`, `code`, `name`, `alias`, `path`, `source`, `sort`, `category`, `action`, `is_open`, `remark`, `is_deleted`)
+VALUES ('1482973877666611210', '1482973877666611207', 'bankmerchant_delete', '删除', 'delete', '/api/bank_merchant/bankmerchant/remove', 'delete', 3, 2, 3, 1, NULL, 0);
+INSERT INTO `blade_menu`(`id`, `parent_id`, `code`, `name`, `alias`, `path`, `source`, `sort`, `category`, `action`, `is_open`, `remark`, `is_deleted`)
+VALUES ('1482973877666611211', '1482973877666611207', 'bankmerchant_view', '查看', 'view', '/bank_merchant/bankmerchant/view', 'file-text', 4, 2, 2, 1, NULL, 0);

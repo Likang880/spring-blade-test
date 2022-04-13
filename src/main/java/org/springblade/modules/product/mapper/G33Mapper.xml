@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.springblade.modules.product.mapper.G33Mapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="g33ResultMap" type="org.springblade.modules.product.entity.G33">
+        <id column="id" property="id"/>
+        <result column="series" property="series"/>
+        <result column="product_description" property="productDescription"/>
+        <result column="type" property="type"/>
+        <result column="ivory_price" property="ivoryPrice"/>
+        <result column="champagne _gold_price" property="champagne GoldPrice"/>
+        <result column="starry_grey_price" property="starryGreyPrice"/>
+        <result column="black_price" property="blackPrice"/>
+        <result column="creat_user" property="creatUser"/>
+        <result column="creat_time" property="creatTime"/>
+        <result column="update_user" property="updateUser"/>
+        <result column="update_time" property="updateTime"/>
+        <result column="status" property="status"/>
+        <result column="is_deleted" property="isDeleted"/>
+    </resultMap>
+
+
+    <select id="selectG33Page" resultMap="g33ResultMap">
+        select *
+        from blade_g33
+        where is_deleted = 0
+    </select>
+
+    <select id="selectG33Query" resultMap="g33ResultMap">
+        select * from blade_g33
+        <where>
+            is_deleted = 0
+            <if test="dto.series != null and dto.series != ''">
+                and series = #{dto.series}
+            </if>
+            <if test="dto.productDescription != null and dto.productDescription != ''">
+                and product_description like concat('%', #{dto.productDescription}, '%')
+            </if>
+            <if test="dto.type != null and dto.type != ''">
+                and type in
+                <foreach item="item" collection="dto.types" separator="," open="(" close=")" index="">
+                    #{item}
+                </foreach>
+            </if>
+        </where>
+    </select>
+
+</mapper>
