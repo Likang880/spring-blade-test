@@ -127,32 +127,4 @@ public class BankEntityAccountController extends BladeController {
 		return R.status(bankEntityAccountService.removeByIds(Func.toLongList(ids)));
 	}
 
-	public static void main(String[] args) {
-
-		playSound("D:\\Documents\\SpringBlade\\src\\main\\resources\\static\\localmp3");
-	}
-
-	private static void playSound(String fileName) {
-		File file = new File(fileName);
-		Player player = null;
-		File[] files = file.listFiles();
-		for (File file1 : files) {
-			if (file.exists()) {
-				MediaLocator mediaLocator = new MediaLocator("file:" + file1.getAbsolutePath());
-				System.out.println("========file.getAbsolutePath()=======" + file1.getAbsolutePath());
-
-				try {
-					player = Manager.createRealizedPlayer(mediaLocator);
-					player.prefetch();
-					player.start();
-				} catch (IOException | NoPlayerException | CannotRealizeException e) {
-					e.printStackTrace();
-				}
-			} else {
-				System.out.println("not found file: " + fileName);
-			}
-		}
-	}
-
-
 }
